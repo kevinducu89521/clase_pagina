@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sección con estilo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff7a18, #ffb347);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 122, 24, 0.4);
+    }
+
+    button:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 122, 24, 0.6);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>✨ Bienvenido</h2>
+    <p>Presiona el botón para interactuar</p>
+    <button onclick="mostrarAlerta()">Mostrar alerta</button>
+  </section>
+
+  <script>
+    function mostrarAlerta() {
+      alert("🚀 ¡Interacción activada! Bien hecho.");
+    }
+  </script>
+
+</body>
+</html>
