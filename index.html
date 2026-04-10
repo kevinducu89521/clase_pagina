@@ -10,58 +10,545 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5WQPQFXQ');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
-  <title>Sección con estilo</title>
-  <style>
-    body {
-      
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brand Guidelines | SD Technology</title>
 
-    section {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 16px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      max-width: 300px;
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
 
-    h2 {
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    button {
-      background: linear-gradient(45deg, #ff7a18, #ffb347);
-      border: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(255, 122, 24, 0.4);
-    }
+    <style>
+        :root {
+            /* Paleta de Marca */
+            --brand-green: #5db026;
+            --brand-blue: #0D6EFD;
+            --brand-dark: #111111;
+            --brand-tech: #20C997;
+            
+            /* UI Colors */
+            --bg-base: #050505;
+            --surface-1: rgba(255, 255, 255, 0.03);
+            --surface-2: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
 
-    button:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(255, 122, 24, 0.6);
-    }
+        /* CUSTOM SCROLLBAR & SELECTION */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: rgba(93, 176, 38, 0.3); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-green); }
+        ::selection { background: var(--brand-green); color: #000; }
 
-    button:active {
-      transform: scale(0.98);
-    }
-  </style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* SCANLINE EFFECT OVERLAY */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 999;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+
+        h1, h2, h3, h4, h5, h6, .nav-link, .btn-neon {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        p { color: var(--text-secondary); line-height: 1.8; font-weight: 300; }
+
+        /* EFECTOS DE FONDO FUTURISTAS */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bg-glow::before, .bg-glow::after {
+            content: ''; position: absolute; border-radius: 50%;
+            filter: blur(120px); opacity: 0.15;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+            .hero{
+            padding:100px 0;
+            background:#5db026;
+            color:white;
+            }
+
+            .section{
+            padding:80px 0;
+            }
+
+            .color-box{
+            height:100px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            }
+        .logo {
+            width: 250px;
+            }
+        .bg-glow::before { background: var(--brand-green); width: 600px; height: 600px; top: -200px; left: -200px; }
+        .bg-glow::after { background: var(--brand-blue); width: 500px; height: 500px; bottom: -100px; right: -100px; animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.1); }
+        }
+
+        /* NAVEGACIÓN */
+        .navbar-glass {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .nav-link { color: var(--text-secondary) !important; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-link:hover, .nav-link.active { color: var(--brand-green) !important; }
+
+        /* PANELES DE CRISTAL */
+        .glass-card {
+            background: var(--surface-1); backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 2.5rem; height: 100%; transition: all 0.4s ease;
+            position: relative; z-index: 1; overflow: hidden;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px); background: var(--surface-2);
+            border-color: rgba(93, 176, 38, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(93, 176, 38, 0.05);
+        }
+
+        /* SECCIONES */
+        .section { padding: 120px 0; position: relative; }
+        .section-title {
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 4rem; text-align: center;
+            background: linear-gradient(90deg, #fff, #888);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* BOTONES */
+        .btn-neon {
+            background: transparent; color: #fff;
+            border: 1px solid var(--brand-green); border-radius: 8px;
+            padding: 12px 32px; font-weight: 600; text-decoration: none;
+            display: inline-block; transition: all 0.3s ease;
+            box-shadow: inset 0 0 0 0 var(--brand-green);
+            cursor: pointer;
+        }
+        .btn-neon:hover {
+            box-shadow: inset 0 0 20px 0 var(--brand-green), 0 0 20px rgba(93, 176, 38, 0.4);
+            border-color: #fff; color: #fff;
+        }
+        
+        /* BOTONES DE CONTRASTE (NUEVO) */
+        .btn-contrast {
+            background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color);
+            padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-contrast.active { background: var(--text-primary); color: #000; }
+        .btn-contrast:hover:not(.active) { border-color: var(--text-primary); color: #fff; }
+
+        /* COLORES INTERACTIVOS */
+        .color-swatch { border-radius: 12px; overflow: hidden; cursor: crosshair; border: 1px solid var(--border-color); transition: transform 0.2s; }
+        .color-swatch:hover { transform: scale(1.05); }
+        .color-display { height: 120px; width: 100%; display: flex; align-items: flex-end; padding: 10px; }
+        .color-info { padding: 15px; background: var(--surface-1); text-align: center; }
+        .copy-toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--brand-green); color: #fff; padding: 12px 24px; border-radius: 30px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+            opacity: 0; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 1000;
+            box-shadow: 0 10px 30px rgba(93, 176, 38, 0.4);
+        }
+        .copy-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        /* CONTENEDOR DE LOGO DINÁMICO */
+        .logo-preview-box {
+            border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px;
+            padding: 3rem; display: flex; align-items: center; justify-content: center;
+            transition: background 0.5s ease; min-height: 200px;
+        }
+        .logo-preview-box img { max-width: 200px; transition: filter 0.5s ease; }
+
+        /* ICONOGRAFÍA (NUEVO) */
+        .icon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1.5rem; }
+        .icon-box {
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-color);
+            border-radius: 12px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); transition: 0.3s;
+        }
+        .icon-box:hover { color: var(--brand-tech); border-color: var(--brand-tech); transform: translateY(-5px); background: rgba(32, 201, 151, 0.05); }
+
+        /* TYPEWRITER EFFECT */
+        .typewriter-text { border-right: 3px solid var(--brand-green); white-space: nowrap; overflow: hidden; margin: 0 auto; }
+        @keyframes blinkCursor { 50% { border-right-color: transparent; } }
+        .blink { animation: blinkCursor 0.7s steps(44) infinite normal; }
+
+        /* ANIMACIONES SCROLL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+    </style>
 </head>
-<body>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+    <div class="bg-glow"></div>
+    <div id="copyToast" class="copy-toast"></div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
+                <span style="color: var(--brand-green); margin-right: 8px;">//</span> SD TECH
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#adn">ADN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#logos">Logotipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#colores">Colores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tipografia">Tipografía & Íconos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section d-flex align-items-center min-vh-100 text-center" style="padding-top: 80px;">
+        <div class="container reveal active">
+            <div class="badge rounded-pill px-3 py-2 mb-4 d-inline-block tracking-wide" style="background: rgba(93, 176, 38, 0.1); border: 1px solid var(--brand-green); color: var(--brand-green);">SYSTEM VER 4.0</div>
+            
+            <h1 class="display-2 fw-bold mb-4" style="height: 1.2em;">
+                <span id="typewriter" class="typewriter-text text-gradient blink"></span>
+            </h1>
+            
+            <p class="lead mx-auto mb-5 fs-5" style="max-width: 600px; font-family: 'Fira Code', monospace; color: var(--brand-tech);">> Inicializando Design System corporativo...</p>
+            <a href="#adn" class="btn-neon">Ejecutar Guía _</a>
+        </div>
+    </header>
+
+    <section id="adn" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">ADN de la Marca</h2>
+            <div class="row g-4">
+                <div class="col-lg-12 reveal delay-1">
+                    <div class="glass-card text-center mb-4">
+                        <i data-lucide="cpu" style="width: 48px; height: 48px; color: var(--brand-green); margin-bottom: 20px;"></i>
+                        <h3 class="text-white mb-3">El Concepto (S & D)</h3>
+                        <p class="mx-auto" style="max-width: 800px;">El logotipo está compuesto por las iniciales <strong>Salinas y Ducuara</strong>. El diseño incorpora elementos visuales inspirados en circuitos electrónicos, simbolizando la innovación, conectividad y el flujo de información constante.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal delay-2">
+                    <div class="glass-card">
+                        <h4 class="text-brand-green mb-3"><i data-lucide="target" class="me-2"></i>Misión</h4>
+                        <p>Optimizar el funcionamiento de dispositivos garantizando su buen rendimiento, brindando un servicio técnico de alta calidad adaptado a cada cliente.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal delay-3">
+                    <div class="glass-card">
+                        <h4 class="text-brand-tech mb-3"><i data-lucide="eye" class="me-2"></i>Visión</h4>
+                        <p>Expandir nuestra frontera hacia el desarrollo web, consolidándonos como líderes regionales indiscutibles en soporte técnico y mantenimiento digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="container">
+            <h2 class="section-title reveal">La Marca</h2>
+            <div class="row g-4">
+                <div class="col-lg-12 reveal delay-1">
+                    <div class="glass-card text-center mb-4">
+                        <i data-lucide="cpu" style="width: 48px; height: 48px; color: var(--brand-green); margin-bottom: 20px;"></i>
+                        <h3 class="text-white mb-3">La Marca (S & D)</h3>
+                        <p class="mx-auto" style="max-width: 800px;">SD Technology es una empresa de tecnología dedicada a la configuración y mantenimiento de equipos de cómputo, ofreciendo soluciones eficientes para optimizar el funcionamiento de los dispositivos y garantizar su buen rendimiento. Además, la empresa busca evaluar la posibilidad de ampliar sus servicios hacia el desarrollo de páginas web como desarrolladores, o especializarse únicamente en el área de soporte técnico y mantenimiento, con el objetivo de brindar servicios de alta calidad adaptados a las necesidades de sus clientes.</p>
+                    </div>
+                </div>
+        </div>
+
+
+    <section id="logos" class="section" style="background: rgba(0,0,0,0.3); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title reveal">Comportamiento del Logotipo</h2>
+            
+            <div class="row g-4 mb-5 align-items-center">
+                <div class="col-md-7 reveal delay-1">
+                    <div class="glass-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="text-white mb-0">Tester de Contraste</h5>
+                            <div class="d-flex gap-2">
+                                <button class="btn-contrast active" id="btnDark" onclick="changeLogoBg('dark')">Oscuro</button>
+                                <button class="btn-contrast" id="btnLight" onclick="changeLogoBg('light')">Claro</button>
+                            </div>
+                        </div>
+                        
+                        <div class="logo-preview-box" id="logoPreviewArea" style="background: #050505;">
+                            <img src="images/LogoClaro.png" id="mainLogoPreview" alt="Logo Interactivo">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-5 reveal delay-2">
+                    <div class="glass-card h-100 d-flex flex-column justify-content-center">
+                        <h5 class="text-white mb-3">Reglas de Espaciado</h5>
+                        <p>El logotipo debe respirar. Mantén un área de seguridad (clear space) equivalente a la altura de la letra "S" alrededor de todo el isotipo.</p>
+                        <ul class="list-unstyled mt-3" style="color: var(--text-secondary);">
+                            <li class="mb-2"><i data-lucide="check-circle-2" class="me-2 text-brand-green" style="width: 18px;"></i> Tamaño mínimo web: 120px</li>
+                            <li class="mb-2"><i data-lucide="check-circle-2" class="me-2 text-brand-green" style="width: 18px;"></i> Tamaño mínimo print: 3cm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="colores" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Uso incorrecto del logo</h2>
+            <p class="text-center mx-auto mb-5 reveal delay-1" style="max-width: 700px;">Haz clic en cualquier muestra para copiar el código HEX directamente a tu portapapeles.</p>
+                
+
+
+            <div class="d-flex">
+                <div class="col-md-4 text-center">
+                <img Class="logo" src="images/LogoDeforme.png">
+                <p>No deformar</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img Class="logo" src="images/Logoblack.png">
+                <p>No cambiar colores</p>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <img Class="logo" src="images/NoRotar.png">
+                <p>No rotar</p>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="colores" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Paleta Cromática</h2>
+            <p class="text-center mx-auto mb-5 reveal delay-1" style="max-width: 700px;">Haz clic en cualquier muestra para copiar el código HEX directamente a tu portapapeles.</p>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 reveal delay-1">
+                    <div class="color-swatch" onclick="copyColor('#5db026', 'Verde SD')">
+                        <div class="color-display" style="background: var(--brand-green);"></div>
+                        <div class="color-info">
+                            <h6 class="text-white mb-1">Verde SD</h6>
+                            <span class="text-secondary small font-monospace">#5db026</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 reveal delay-2">
+                    <div class="color-swatch" onclick="copyColor('#0D6EFD', 'Azul Base')">
+                        <div class="color-display" style="background: var(--brand-blue);"></div>
+                        <div class="color-info">
+                            <h6 class="text-white mb-1">Azul Base</h6>
+                            <span class="text-secondary small font-monospace">#0D6EFD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 reveal delay-3">
+                    <div class="color-swatch" onclick="copyColor('#111111', 'Negro Matriz')">
+                        <div class="color-display" style="background: var(--brand-dark);"></div>
+                        <div class="color-info">
+                            <h6 class="text-white mb-1">Negro Matriz</h6>
+                            <span class="text-secondary small font-monospace">#111111</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 reveal delay-4">
+                    <div class="color-swatch" onclick="copyColor('#20C997', 'Verde Digital')">
+                        <div class="color-display" style="background: var(--brand-tech);"></div>
+                        <div class="color-info">
+                            <h6 class="text-white mb-1">Verde Digital</h6>
+                            <span class="text-secondary small font-monospace">#20C997</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tipografia" class="section" style="background: rgba(0,0,0,0.3); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title reveal">Tipografía & Iconografía</h2>
+            
+            <div class="row g-5 mb-5 align-items-start">
+                <div class="col-md-6 reveal delay-1">
+                    <div class="glass-card">
+                        <h6 class="text-brand-green text-uppercase tracking-wide mb-4">Títulos (Space Grotesk)</h6>
+                        <h1 class="text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">Aa Bb Cc</h1>
+                        <p class="small font-monospace text-secondary mb-4">0123456789 !@#$%</p>
+                        
+                        <hr style="border-color: var(--border-color);">
+                        
+                        <h6 class="text-brand-tech text-uppercase tracking-wide mt-4 mb-4">Cuerpo (Inter)</h6>
+                        <h2 class="text-white mb-2" style="font-family: 'Inter', sans-serif; font-weight: 400;">Aa Bb Cc</h2>
+                        <p class="small font-monospace text-secondary">0123456789 !@#$%</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 reveal delay-2">
+                    <div class="glass-card">
+                        <h6 class="text-white text-uppercase tracking-wide mb-4">Sistema de Íconos (Lucide)</h6>
+                        <p class="small mb-4">SD Technology utiliza un estilo de íconos de línea (stroke 2px) para mantener un diseño técnico, limpio y escalable.</p>
+                        
+                        <div class="icon-grid">
+                            <div class="icon-box"><i data-lucide="wrench"></i></div>
+                            <div class="icon-box"><i data-lucide="monitor"></i></div>
+                            <div class="icon-box"><i data-lucide="server"></i></div>
+                            <div class="icon-box"><i data-lucide="code-2"></i></div>
+                            <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                            <div class="icon-box"><i data-lucide="zap"></i></div>
+                            <div class="icon-box"><i data-lucide="database"></i></div>
+                            <div class="icon-box"><i data-lucide="cloud"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="colores" class="section">
+        <div class="container">
+    <h2 class="text-center">Tamaño y Area de Reserva</h2>
+
+        <div class="row mt-4 text-center">
+
+            <div class="text-center">
+                <p>El área de reserva es el espacio mínimo que debe mantenerse alrededor del logotipo para evitar que otros elementos gráficos interfieran con su visibilidad o legibilidad.
+
+                    En el caso de SD TECH, el área de reserva se define tomando como referencia el ancho de la letra “S” del logotipo. Este espacio debe mantenerse libre alrededor de toda la marca para asegurar una correcta presentación y mantener la claridad visual.
+
+                    Se recomienda que el tamaño mínimo del logotipo no sea inferior a 200 px de ancho, con el fin de garantizar una correcta legibilidad en medios digitales.
+
+                    Si se requiere utilizar el logotipo en tamaños más reducidos, como en iconos de redes sociales o favicons, se recomienda utilizar una versión simplificada o tipográfica del logotipo, evitando problemas de reducción y manteniendo la coherencia visual de la marca.</p>
+                <img Class="logo" src="images/Logo_limit.png">
+                
+            </div>
+
+        </div>
+    </div>
+        </div>
+    </section>
+
+    <section id="colores" class="section">
+        <div class="container">
+    <h2 class="text-center">WORDMARK + PARTNER LOGO</h2>
+
+        <div class="row mt-4 text-center">
+
+            <div class="col-md-4"><img Class="logo" src="images/LogoPartner1.png"></div>
+            <div class="col-md-4"><img Class="logo" src="images/LogoPartner2.png"></div>
+            <div class="col-md-4"><img Class="logo" src="images/LogoPartner3.png"></div>
+
+        </div>
+    </div>
+    </section>
+
+    <footer class="section text-center" style="padding: 60px 0; background: #000; border-top: 1px solid var(--brand-green);">
+        <div class="container reveal">
+            <h3 class="text-white mb-4">Descarga logos y archivos de marca aquí</h3>
+            <a href="#" class="btn-neon"><i data-lucide="download" class="me-2" style="width: 18px;"></i> Descargar Assets (.ZIP)</a>
+            <div class="mt-5 text-secondary small font-monospace">
+                SD_TECH_BRAND_SYS_V1 // 2026
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Iniciar Íconos
+        lucide.createIcons();
+
+        // 1. Animaciones de Scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        reveals.forEach(reveal => revealOnScroll.observe(reveal));
+
+        // 2. Función Copiar Color (Mejorada)
+        function copyColor(hexCode, name) {
+            navigator.clipboard.writeText(hexCode).then(() => {
+                const toast = document.getElementById('copyToast');
+                toast.innerHTML = `<i data-lucide="check" style="width: 16px; margin-right: 8px;"></i> <strong>${name}</strong> (${hexCode}) copiado`;
+                lucide.createIcons(); // Recargar ícono dentro del toast
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2500);
+            });
+        }
+
+        // 3. Tester de Contraste de Logo
+        function changeLogoBg(mode) {
+            const area = document.getElementById('logoPreviewArea');
+            const img = document.getElementById('mainLogoPreview');
+            const btnDark = document.getElementById('btnDark');
+            const btnLight = document.getElementById('btnLight');
+
+            if (mode === 'light') {
+                area.style.background = '#FFFFFF';
+                img.style.filter = 'invert(1)'; // Simula logo oscuro. Quita esto si usas una imagen real oscura (images/LogoOscuro.png)
+                btnLight.classList.add('active');
+                btnDark.classList.remove('active');
+            } else {
+                area.style.background = '#050505';
+                img.style.filter = 'invert(0)'; 
+                btnDark.classList.add('active');
+                btnLight.classList.remove('active');
+            }
+        }
+
+        // 4. Typewriter Effect
+        const textToType = "SD Technology";
+        const typeContainer = document.getElementById('typewriter');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < textToType.length) {
+                typeContainer.innerHTML += textToType.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Velocidad de tipeo
+            } else {
+                typeContainer.classList.remove('blink');
+                typeContainer.style.borderRight = 'none';
+            }
+        }
+        
+        // Iniciar máquina de escribir un poco después de cargar
+        setTimeout(typeWriter, 500);
+    </script>
+</body>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WQPQFXQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
